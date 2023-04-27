@@ -9,21 +9,21 @@
 TODOs: 
 
 
- - [ ] Command line cheatsheet steps (setup for Node.js project)
+ - [x] Command line cheatsheet steps (setup for Node.js project)
 
  - [ ] Set up a .gitignore with the memes folder
 
  - [ ] Create a folder called "memes"
 
- - [ ] Access the website (send a request to the website / "fetching")
+ - [x] Access the website (send a request to the website / "fetching")
 
- - [ ] Search for the section in the string of HTML that comes back in the 
+ - [x] Search for the section in the string of HTML that comes back in the 
  "response" from the website
- - [ ] Search for the first 10 image sources in the section
+ - [x] Search for the first 10 image sources in the section
 
- - [ ] Two options
+ - [x] Two options
  - [ ] One option: .jpg - this is in the HTML code of the website
- - [ ] Another option: <img
+ - [x] Another option: <img
 
  - [ ] Get the src URL strings from the img
 
