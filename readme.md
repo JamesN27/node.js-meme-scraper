@@ -11,7 +11,7 @@ TODOs:
 
  - [x] Command line cheatsheet steps (setup for Node.js project)
 
- - [ ] Set up a .gitignore with the memes folder
+ - [x] Set up a .gitignore with the memes folder
 
  - [x] Create a folder called "memes"
 
@@ -35,4 +35,4 @@ TODOs:
 
  - [x] In this file, store the image data that comes back (in the "response") from the website
 
- - [ ] Test to make sure the program can run multiple times without failing
+ - [x] Test to make sure the program can run multiple times without failing
