@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-
 import extractUrls from 'extract-urls';
 import fetch from 'node-fetch';
 
