@@ -25,7 +25,6 @@ const filteredUrls = urls.filter((url) => url.includes('width')).slice(0, 10);
 for (let i = 1; i <= filteredUrls.length; i++) {
   const response2 = await fetch(urls[i]);
   const buffer = await response2.buffer();
-  const fileName = `${folderName}/0${i}.jpg`;
+  const fileName = `${folderName}/${i < 10 ? '0' : ''}${i}.jpg`;
   fs.writeFileSync(fileName, buffer);
 }
-
