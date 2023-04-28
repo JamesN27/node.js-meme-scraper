@@ -17,7 +17,7 @@ const body = await response.text();
 // extract URLs from response HTML
 const urls = extractUrls(body);
 
-// filter URLs so we only get the first 10 that are definitely images (containing the keyword width)
+// filter URLs so we only get the first 10 that are definitely images (containing the word images but not containing memecomplete)
 const filteredUrls = urls
   .filter((url) => !url.includes('memecomplete') && url.includes('images'))
   .slice(0, 10);
