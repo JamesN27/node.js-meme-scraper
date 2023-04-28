@@ -1,6 +1,27 @@
 import fs from 'node:fs';
-import extractUrls from 'extract-urls';
 import fetch from 'node-fetch';
+
+function extractUrls(str, lower = false) {
+  const regexp =
+    /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()'@:%_\+.~#?!&//=]*)/gi;
+
+  if (typeof str !== 'string') {
+    throw new TypeError(
+      `The str argument should be a string, got ${typeof str}`,
+    );
+  }
+
+  if (str) {
+    const urls = str.match(regexp);
+    if (urls) {
+      return lower ? urls.map((item) => item.toLowerCase()) : urls;
+    } else {
+      undefined;
+    }
+  } else {
+    undefined;
+  }
+}
 
 // create folder called memes
 const folderName = 'memes';
@@ -22,7 +43,7 @@ const filteredUrls = urls
   .filter((url) => !url.includes('memecomplete') && url.includes('images'))
   .slice(0, 10);
 
-// loop to safe the images to the target folder and naming them correctly. Also using a try / catch block, i dont know how it does it but somehow it prevents the image saving error.
+// loop to save the images to the target folder and naming them correctly.
 for (let i = 0; i < filteredUrls.length; i++) {
   const response2 = await fetch(filteredUrls[i]);
   const buffer = await response2.buffer();
