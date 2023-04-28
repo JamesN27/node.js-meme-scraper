@@ -18,7 +18,9 @@ const body = await response.text();
 const urls = extractUrls(body);
 
 // filter URLs so we only get the first 10 that are definitely images (containing the keyword width)
-const filteredUrls = urls.filter((url) => url.includes('width')).slice(0, 10);
+const filteredUrls = urls
+  .filter((url) => !url.includes('memecomplete') && url.includes('images'))
+  .slice(0, 10);
 
 // loop to safe the images to the target folder and naming them correctly. Also using a try / catch block, i dont know how it does it but somehow it prevents the image saving error.
 for (let i = 0; i < filteredUrls.length; i++) {
