@@ -24,18 +24,8 @@ const filteredUrls = urls
 
 // loop to safe the images to the target folder and naming them correctly. Also using a try / catch block, i dont know how it does it but somehow it prevents the image saving error.
 for (let i = 0; i < filteredUrls.length; i++) {
-  try {
-    const response2 = await fetch(filteredUrls[i]);
-    const buffer = await response2.buffer();
-    const fileName = `${folderName}/${i < 9 ? '0' : ''}${i + 1}.jpg`;
-    fs.writeFileSync(fileName, buffer);
-  } catch (err) {
-    console.log(`Error occurred while fetching image ${i}: ${err}`);
-  }
+  const response2 = await fetch(filteredUrls[i]);
+  const buffer = await response2.buffer();
+  const fileName = `${folderName}/${i < 9 ? '0' : ''}${i + 1}.jpg`;
+  fs.writeFileSync(fileName, buffer);
 }
-
-// for (let i = 1; i <= filteredUrls.length; i++) {
-//  const response2 = await fetch(urls[i]);
-//  const buffer = await response2.buffer();
-//  const fileName = `${folderName}/${i < 10 ? '0' : ''}${i}.jpg`;
-//  fs.writeFileSync(fileName, buffer);
